@@ -104,6 +104,10 @@ footer {
     text-align: center;
 }
 
+.left-side {
+    float: left;
+}
+
 main article {
     display: inline-block;
     width: 100%;

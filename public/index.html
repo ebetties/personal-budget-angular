@@ -4,20 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Budget</title>
-    <meta name="description" content="A free personal budger app">
+    <meta name="description" content="A free personal budget app">
     <meta name="keywords" content="app free budget finance">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
 
-<a href="#main" class="skip">Skip to content</a>
+<!-- This is an A11y Change -->    
+
+<a class="skip-to-content-link" href="#main">Skip to content</a>
 
     <nav>
         <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about.html">About</a></li>
-            <li><a href="/login.html">Login</a></li>
+<!-- This is an A11y Change -->   
+<!--Changed to /public/-->
+
+            <li><a href="/public/">Home</a></li>
+            <!-- This is an A11y Change -->   
+<!--Changed to /public/about.html-->
+            <li><a href="/public/about.html">About</a></li>
+            <!-- This is an A11y Change -->   
+<!--Changed to /login/about.html-->
+            <li><a href="/public/login.html">Login</a></li>
             <li><a href="https://google.com">Google</a></li>
         </ul>
     </nav>
@@ -32,6 +41,7 @@
         <div class="page-area">
 
             <article>
+                
                 <h1>Stay on track</h1>
                 <p>
                     Do you know where you are spending your money? If you really stop to track it down,
@@ -41,14 +51,16 @@
             </article>
     
             <article>
-                <h1>Alerts</h1>
+                <!-- This is a Semantic HTML Change -->
+                <h2>Alerts</h2>
                 <p>
                     What if your clothing budget ended? You will get an alert. The goal is to never go over the budget.
                 </p>
             </article>
     
             <article>
-                <h1>Results</h1>
+                <!-- This is a Semantic HTML Change -->
+                <h2>Results</h2>
                 <p>
                     People who stick to a financial plan, budgeting every expense, get out of debt faster!
                     Also, they to live happier lives... since they expend without guilt or fear... 
@@ -57,14 +69,16 @@
             </article>
     
             <article>
-                <h1>Free</h1>
+                <!-- This is a Semantic HTML Change -->
+                <h2>Free</h2>
                 <p>
                     This app is free!!! And you are the only one holding your data!
                 </p>
             </article>
     
             <article>
-                <h1>Stay on track</h1>
+                <!-- This is a Semantic HTML Change -->
+                <h2>Stay on track</h2>
                 <p>
                     Do you know where you are spending your money? If you really stop to track it down,
                     you would get surprised! Proper budget management depends on real data... and this
@@ -73,14 +87,16 @@
             </article>
     
             <article>
-                <h1>Alerts</h1>
+                <!-- This is a Semantic HTML Change -->
+                <h2>Alerts</h2>
                 <p>
                     What if your clothing budget ended? You will get an alert. The goal is to never go over the budget.
                 </p>
             </article>
     
             <article>
-                <h1>Results</h1>
+                <!-- This is a Semantic HTML Change -->
+                <h2>Results</h2>
                 <p>
                     People who stick to a financial plan, budgeting every expense, get out of debt faster!
                     Also, they to live happier lives... since they expend without guilt or fear... 
@@ -89,7 +105,8 @@
             </article>
     
             <article>
-                <h1>Chart</h1>
+                <!-- This is a Semantic HTML Change -->
+                <h2>Chart</h2>
                 <p>
                     <canvas id="myChart" width="400" height="400"></canvas>
                 </p>

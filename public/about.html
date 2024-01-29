@@ -1,1 +1,100 @@
-About
+<!--About-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Budget</title>
+    <meta name="description" content="A free personal budger app">
+    <meta name="keywords" content="app free budget finance">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+    <a class="skip-to-content-link" href="#main">Skip to content</a>
+
+
+    <nav>
+        <ul>
+
+<!--Changed to /public/-->
+
+            <li><a href="/public/">Home</a></li>
+<!--Changed to /public/about.html-->
+            <li><a href="/public/about.html">About</a></li>
+<!--Changed to /login/about.html-->
+            <li><a href="/public/login.html">Login</a></li>
+            <li><a href="https://google.com">Google</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <h1>Personal Budget</h1>
+        <h2>A personal-budget management app</h2>
+    </div>
+
+    <main class="center" id="main">
+
+        <div class="page-area">
+<!--Added the About us article and the p tag for a description-->
+            <article>
+                <h2>About Us</h2>
+                <p>
+                    We are a web development class that has created a Personal Budget Web app for you use.
+                </p>
+            </article>
+    
+            
+
+        </div>
+
+    </main>
+
+    <footer class="bottom">
+        <div class="center">
+            All rights reserved &copy; Fabio Nolasco
+        </div>
+    </footer>
+
+    
+    <script>
+        var dataSource = {
+                datasets: [
+                    {
+                        data: [],
+                        backgroundColor: [
+                            '#ffcd56',
+                            '#ff6384',
+                            '#36a2eb',
+                            '#fd6b19',
+                        ]
+                    }
+                ],
+                labels: []
+            };
+
+        function createChart() {
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var myPieChart = new Chart(ctx, {
+                type: 'pie',
+                data: dataSource
+            });
+        }
+
+        function getBudget() {
+            axios.get('http://localhost:3000/budget')
+            .then(function (res) {
+                for (var i = 0; i < res.data.myBudget.length; i++) {
+                    dataSource.datasets[0].data[i] = res.data.myBudget[i].budget;
+                    dataSource.labels[i] = res.data.myBudget[i].title;
+                    createChart();
+                }
+            });
+        }
+
+        getBudget();
+    </script>
+
+</body>
+</html>

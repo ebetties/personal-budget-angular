@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="main.css">
 </head>
-<body>
+
 
 <!-- This is an A11y Change -->    
 
@@ -41,24 +41,6 @@
     <main class="center" id="main">
 
         <div class="page-area">
-
-            <article>
-                <!-- This is a Semantic HTML Change -->
-                <h2>Stay on track</h2>
-                <p>
-                    Do you know where you are spending your money? If you really stop to track it down,
-                    you would get surprised! Proper budget management depends on real data... and this
-                    app will help you with that!
-                </p>
-            </article>
-    
-            <article>
-                <!-- This is a Semantic HTML Change -->
-                <h2>Alerts</h2>
-                <p>
-                    What if your clothing budget ended? You will get an alert. The goal is to never go over the budget.
-                </p>
-            </article>
     
             <article>
                 <!-- This is a Semantic HTML Change -->
@@ -70,13 +52,7 @@
                 </p>
             </article>
     
-            <article>
-                <!-- This is a Semantic HTML Change -->
-                <h2>Free</h2>
-                <p>
-                    This app is free!!! And you are the only one holding your data!
-                </p>
-            </article>
+            
     
             <article>
                 <!-- This is a Semantic HTML Change -->
@@ -106,13 +82,9 @@
                     because they know it is all good and accounted for.
                 </p>
             </article>
-            <article>
-                
-            </article>
+            
 
-
-            <!-- This is an SEO Change -->
- <!-- commented out because it did not work
+  
             <article>
                
                 <h2>Chart</h2>
@@ -120,7 +92,7 @@
                     <canvas id="myChart" width="400" height="400"></canvas>
                 </p>
             </article>
-        -->
+       
         </div>
 
     </main>
@@ -133,11 +105,9 @@
             <a href="mailto:@google.com">Click here to email us .</a>
         </div>
     </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" integrity="sha512-quHCp3WbBNkwLfYUMd+KwBAgpVukJu5MncuQaWXgCrfgcxCJAq/fo+oqrRKOj+UKEmyMCG3tb8RB63W+EmrOBg==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
-
-    <script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js" integrity="sha512-NQfB/bDaB8kaSXF8E77JjhHG5PM6XVRxvHzkZiwl3ddWCEPBa23T76MuWSwAJdMGJnmQqM0VeY9kFszsrBEFrQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
         var dataSource = {
                 datasets: [
                     {
@@ -147,7 +117,7 @@
                             '#ff6384',
                             '#36a2eb',
                             '#fd6b19',
-                        ]
+                        ],
                     }
                 ],
                 labels: []
@@ -160,19 +130,21 @@
                 data: dataSource
             });
         }
-
+      
         function getBudget() {
-            axios.get('http://localhost:3000/budget')
-            .then(function (res) {
+            axios.get('/budget')
+            .then(function (res){
+                console.log(res.data);
                 for (var i = 0; i < res.data.myBudget.length; i++) {
                     dataSource.datasets[0].data[i] = res.data.myBudget[i].budget;
                     dataSource.labels[i] = res.data.myBudget[i].title;
-                    createChart();
-                }
+            }
+            createChart();
             });
-        }
 
+        }
         getBudget();
+      
     </script>
 
 </body>

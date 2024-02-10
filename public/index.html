@@ -157,7 +157,7 @@
         
         
         function change(data) {
-        
+            var ctx = document.getElementById('myChart').getContext('2d');
             /* ------- PIE SLICES -------*/
             var slice = svg.select(".slices").selectAll("path.slice")
                 .data(pie(data), key);
@@ -247,7 +247,7 @@
                 .remove();
         };
         
-        d3.json('/budget', function (error, data) {
+        d3.json('http://localhost:3000/budget', function (error, data) {
             if (error) throw error;
 
             change(data.myBudget);
@@ -296,7 +296,7 @@
         }
       
         function getBudget() {
-            axios.get('/budget')
+            axios.get('http://localhost:3000/budget')
             .then(function (res){
                 console.log(res.data);
                 for (var i = 0; i < res.data.myBudget.length; i++) {

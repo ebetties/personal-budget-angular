@@ -5,6 +5,7 @@ import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
 import { P404Component } from './p404/p404.component';
 import { HeroComponent } from './hero/hero.component';
+import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
   {
@@ -12,7 +13,6 @@ const routes: Routes = [
     component: HomepageComponent,
     pathMatch: 'full'
   },
-
 
   {
     path: 'about',
@@ -23,15 +23,21 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
+    path: 'contact',
+    component: ContactComponent
+  },
+  {
     path: '**',
     component: P404Component
   },
-
-
   {
-    path: '/index',
-    component: HeroComponent,
-  },
+    path: 'homepage',
+    component: HeroComponent
+  }
+
+
+
+
 
 ];
 

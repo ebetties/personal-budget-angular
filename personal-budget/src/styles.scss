@@ -8,6 +8,8 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
+
+
  html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
@@ -385,7 +387,7 @@ div.hero {
 }
 
 div.hero h1,
-div.hero h2 {
+div.hero h2, .bread {
   text-align: center;
   margin: 0;
 }
